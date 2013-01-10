@@ -13,6 +13,10 @@
    }
 }
 
+.social {
+	text-align: right;
+}
+
 footer .social-info a {
 	padding: 0px;
 	padding-left: 5px;
