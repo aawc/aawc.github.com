@@ -1,0 +1,24 @@
+.navbar-inner {
+	background:url('../img/back.png') repeat;
+	border: 0px;
+}
+
+.navbar {
+	display: none;
+}
+
+@media (max-width: 480px){
+   header .cta a{
+   display:inline;
+   }
+}
+
+footer .social-info a {
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+a.anchorLink {
+	color: #fff;
+}
