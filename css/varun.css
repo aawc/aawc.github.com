@@ -13,8 +13,19 @@
    }
 }
 
+.lastModified {
+	text-align: left;
+}
 .social {
 	text-align: right;
+}
+@media all and (max-device-width: 400px) {
+	.lastModified {
+		display: none;
+	}
+	.social {
+		text-align: center;
+	}
 }
 
 footer .social-info a {
