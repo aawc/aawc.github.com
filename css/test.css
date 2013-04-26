@@ -1,0 +1,10 @@
+@keyframes test {
+	0% {
+		top: 0px;
+		background-color: red;
+	}
+	100% {
+		top: 100px;
+		background-color: blue;
+	}
+}
