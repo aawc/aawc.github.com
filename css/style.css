@@ -554,3 +554,7 @@ transition:background 1s ease;
 @media (max-width: 979px){
 
 }
+
+.center {
+  text-align: center;
+}
