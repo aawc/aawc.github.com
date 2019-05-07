@@ -1,16 +1,23 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Who, why, what?
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Varun Khaneja. I'm a software engineer on [Google Chrome](https://www.google.com/chrome/).
+I have the following qualities:
+- I am bad at writing about myself.
+- I like to challenge myself about things I'm not good at.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+### My work
 
-What else do you need?
+Design and implement state-of-the-art protections to keep Chrome users safe from
+visiting phishing sites, downloading malware, or harming their internet
+experience.
 
-### my history
+My work is widely deployed and likely actively used by more people than the
+number of individuals in [4 degrees of separation](https://www.nytimes.com/2011/11/22/technology/between-you-and-me-4-74-degrees.html) from me.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+### My history
+
+Nothing remarkable.
