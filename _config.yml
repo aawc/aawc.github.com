@@ -104,7 +104,7 @@ url-pretty: "varun.khaneja.org"
 #gtag: ""
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-37617664-1"
 
 # Google Tag Manager ID
 #gtm: ""
