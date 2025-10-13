@@ -18,3 +18,10 @@ package-lock.json
 
 # Ignore folders related to IDEs
 .vscode/
+
+
+# This helps Jekyll keep track of which files have not been modified since the
+# site was last built, and which files will need to be regenerated on the next
+# build. Only created when using incremental regeneration
+# (e.g.: with jekyll serve -I).
+.jekyll-metadata
