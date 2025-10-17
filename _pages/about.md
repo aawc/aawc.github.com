@@ -8,7 +8,8 @@ redirect_from:
 ---
 
 My name is Varun Khaneja. I’m a Software Engineering Manager on [Google Chrome's
-Security team](https://chrome.security/).
+Security team](https://chrome.security/). I've also been leading the work on
+using [LLMs to protect users](#ai--security).
 
 # My work
 
@@ -37,3 +38,17 @@ users the choices to make the tradeoff between security and privacy that suits
 their needs the best, and identifying ways to bring more protections to users
 within that framework.
 
+# AI + Security
+
+Part of my focus recently has been on identifying ways in which we can protect
+users from [cloaking](https://en.wikipedia.org/wiki/Cloaking) i.e. attacks
+that attempt to "hide" from Google by serving a benign page to Google's crawlers
+and a malicious page to target users.
+
+With the advent of LLMs everywhere, we found ourselves presented with a new
+opportunity of being able to "understand" the page content as it is served to
+end users, and use that to idenitfy pages that are trying to scam users, while
+cloaking from Google. I've been leading a cross-company team to focus on this
+effort, starting with the commonly seen
+["Technical support scam"](https://en.wikipedia.org/wiki/Technical_support_scam)
+with an aim to reduce other kinds of scams too.
