@@ -544,7 +544,9 @@ if (typeof jQuery === 'undefined') {
   var Collapse = function (element, options) {
     this.$element      = $(element)
     this.options       = $.extend({}, Collapse.DEFAULTS, options)
-    this.$trigger      = $(this.options.trigger).filter('[href="#' + element.id + '"], [data-target="#' + element.id + '"]')
+    var trigger        = this.options.trigger
+    var $trigger       = typeof trigger == 'string' ? $($.find(trigger)) : $(trigger)
+    this.$trigger      = $trigger.filter('[href="#' + element.id + '"], [data-target="#' + element.id + '"]')
     this.transitioning = null
 
     if (this.options.parent) {
