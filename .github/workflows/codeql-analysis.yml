@@ -7,6 +7,7 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '0 0 * * 0' # Runs weekly on Sundays at 00:00 UTC
+  workflow_dispatch:
 
 jobs:
   analyze:
